@@ -1,0 +1,4 @@
+fragment Example on Example {
+  id
+  title
+}

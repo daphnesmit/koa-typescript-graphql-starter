@@ -1,0 +1,7 @@
+extend type Query {
+  example(id: String!): Example! 
+}
+
+extend type Mutation {
+  updateExample(input: ExampleInput!): Example!
+}

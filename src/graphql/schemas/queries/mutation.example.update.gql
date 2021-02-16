@@ -1,0 +1,5 @@
+mutation UpdateExample($input: ExampleInput!) {
+  updateExample(input: $input) {
+    id
+  }
+}

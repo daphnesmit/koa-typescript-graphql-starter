@@ -1,0 +1,25 @@
+
+"""
+Base Query type that is extended in all other .gql files
+Define some mock / test / debug queries here
+"""
+type Query {
+  root: String
+}
+
+"""
+Base Mutation type that is extended in all other .gql files
+Define some mock / test / debug mutations here
+"""
+type Mutation {
+  root: String
+}
+
+
+"""
+Base Subscription type that is extended in all other .gql files
+Define some mock / test / debug subscription here
+"""
+type Subscription {
+  root: String
+}

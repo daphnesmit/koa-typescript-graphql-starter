@@ -1,0 +1,37 @@
+{
+  "include": ["src/**/*.ts", "types/**/*.ts"],
+  "exclude": ["node_modules"],
+  "compilerOptions": {
+    "target": "es2018",
+    "module": "commonjs",
+    "baseUrl": ".",
+    "outDir": "dist",
+    "rootDirs": ["."],
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitThis": true,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "keyofStringsOnly": true,
+    "lib": ["es2015", "es2018"],
+    "skipLibCheck": true,
+    "types": ["node"],
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "typeRoots": [
+      "./types",
+      "./node_modules/@types",
+    ],
+    "paths": {
+      "@/*": ["./src/*", "./dist/*"]
+    }
+  }
+}

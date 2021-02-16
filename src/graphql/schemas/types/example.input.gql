@@ -1,0 +1,4 @@
+input ExampleInput {
+  id: String!
+  title: String!
+}

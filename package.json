@@ -1,0 +1,81 @@
+{
+  "name": "@elseu/koa-typescript-graphql-started",
+  "version": "1.0.0",
+  "description": "KOA server, GraphQL and Typescript starter.",
+  "main": "dist/index.js",
+  "author": "Daphne Smit",
+  "contributors": [
+    "Daphne Smit <D.Smit@sdu.nl>"
+  ],
+  "repository": "git://github.com/daphnesmit/koa-typescript-graphql-started.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "scripts": {
+    "codegen": "graphql-codegen --config codegen.yml",
+    "prebuild": "npm run codegen",
+    "build": "rm -rf dist/ && tsc -p tsconfig.json",
+    "start": "export NODE_ENV=production && node --optimize_for_size -r ts-node/register/transpile-only -r tsconfig-paths/register dist/index.js",
+    "dev": "ts-node-dev --optimize_for_size --inspect -r tsconfig-paths/register src/index.ts",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint src --ext .ts",
+    "lint-fix": "eslint --fix src --ext .ts",
+    "lint:graphql": "graphql-schema-linter src/graphql/schemas/types/*.gql --expect relay-page-info-spec"
+  },
+  "lint-staged": {
+    "**/*.ts": [
+      "eslint --fix"
+    ],
+    "src/graphql/schema/**/*.gql": [
+      "graphql-schema-linter src/graphql/schemas/types/*.gql"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "npm run type-check"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "dependencies": {
+    "@graphql-codegen/cli": "^1.20.1",
+    "@graphql-codegen/fragment-matcher": "^2.0.1",
+    "@graphql-codegen/introspection": "^1.18.1",
+    "@graphql-codegen/typescript": "^1.21.0",
+    "@graphql-codegen/typescript-resolvers": "^1.18.2",
+    "apollo-server-koa": "^2.21.0",
+    "console-log-level": "^1.4.1",
+    "dotenv": "^8.2.0",
+    "graphql": "^15.5.0",
+    "koa": "^2.13.1",
+    "koa-bodyparser": "^4.3.0",
+    "merge-graphql-schemas": "^1.7.8",
+    "ts-node": "^9.1.1",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^4.1.5"
+  },
+  "devDependencies": {
+    "@types/console-log-level": "^1.4.0",
+    "@types/dotenv": "^8.2.0",
+    "@types/graphql": "^14.5.0",
+    "@types/koa": "^2.11.8",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/node": "^14.14.28",
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^7.2.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "eslint-plugin-promise": "^4.3.1",
+    "graphql-schema-linter": "^2.0.1",
+    "husky": "^5.0.9",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1",
+    "ts-node-dev": "^1.1.1"
+  }
+}

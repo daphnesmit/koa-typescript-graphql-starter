@@ -1,0 +1,9 @@
+{
+  "rules": [
+    "defined-types-are-used",
+    "enum-values-sorted-alphabetically",
+    "fields-are-camel-cased",
+    "input-object-values-are-camel-cased",
+    "types-are-capitalized"
+  ]
+}
