@@ -1,5 +1,5 @@
 {
-  "name": "@elseu/koa-typescript-graphql-started",
+  "name": "koa-typescript-graphql-starter",
   "version": "1.0.0",
   "description": "KOA server, GraphQL and Typescript starter.",
   "main": "dist/index.js",
@@ -7,7 +7,7 @@
   "contributors": [
     "Daphne Smit <D.Smit@sdu.nl>"
   ],
-  "repository": "git://github.com/daphnesmit/koa-typescript-graphql-started.git",
+  "repository": "git://github.com/daphnesmit/koa-typescript-graphql-starter.git",
   "scripts": {
     "codegen": "graphql-codegen --config codegen.yml",
     "prebuild": "npm run codegen",

@@ -1,4 +1,4 @@
-# koa-typescript-graphql-started
+# koa-typescript-graphql-starter
 KOA server, GraphQL and Typescript starter.
 
 
