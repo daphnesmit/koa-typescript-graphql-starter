@@ -1,3 +1,4 @@
+import { pubsub } from '@/graphql/subscriptions/graphql/pubsub'
 import { MutationResolvers } from '@/types'
 
 export const updateExample: MutationResolvers['updateExample'] = async (
@@ -6,5 +7,8 @@ export const updateExample: MutationResolvers['updateExample'] = async (
   __,
 ) => {
   const { id, title } = input
+
+  pubsub.publish('exampleUpdated', { exampleUpdated: { id, title } })
+
   return { id, title }
 }

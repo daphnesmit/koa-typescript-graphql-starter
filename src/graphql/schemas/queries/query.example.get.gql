@@ -1,7 +1,0 @@
-#import '../fragments/example.gql'
-
-query GetExample($id: String!) {
-  example(id: $id) {
-    ...Example
-  }
-}

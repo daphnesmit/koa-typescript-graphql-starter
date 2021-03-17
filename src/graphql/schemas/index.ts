@@ -1,8 +1,10 @@
+import { loadFilesSync } from '@graphql-tools/load-files'
+import { mergeTypeDefs } from '@graphql-tools/merge'
 import path from 'path'
-import { fileLoader, mergeTypes } from 'merge-graphql-schemas'
 
-const pathToGraphQLSchema = path.join(__dirname, './types')
-const typesArray = fileLoader(pathToGraphQLSchema)
-const typesMerged = mergeTypes(typesArray)
+const typesArray = loadFilesSync([
+  `${path.join(__dirname)}/**`],
+)
+const typesMerged = mergeTypeDefs(typesArray)
 
 export default typesMerged

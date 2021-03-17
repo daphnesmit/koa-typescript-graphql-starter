@@ -1,7 +1,11 @@
 extend type Query {
-  example(id: String!): Example! 
+  example(id: String!): Example!
 }
 
 extend type Mutation {
   updateExample(input: ExampleInput!): Example!
+}
+
+extend type Subscription {
+  exampleUpdated: Example!
 }
